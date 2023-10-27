@@ -3,6 +3,7 @@ using UnityEngine;
 public class TraveledDistance : MonoBehaviour
 {
     public float Distance { get; private set; }
+
     private float _startPositionZ;
 
     private void Start()

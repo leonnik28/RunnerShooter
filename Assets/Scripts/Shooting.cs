@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+    [SerializeField] public Aim aim;
+
     [SerializeField] private int _timeDelay = 1000;
 
     private Camera _camera;
@@ -36,6 +38,7 @@ public class Shooting : MonoBehaviour
             {
                 if (_isDelayInProgress == false)
                 {
+                    aim.ScaleObject();
                     _isDelayInProgress = true;
 
                     await Task.Delay(_timeDelay);
