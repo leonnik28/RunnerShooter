@@ -6,6 +6,7 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     [SerializeField] private int _timeDelay = 1000;
+    [SerializeField] private Animator _fireGunAnimator;
 
     private Camera _camera;
 
@@ -37,7 +38,7 @@ public class Shooting : MonoBehaviour
                 if (_isDelayInProgress == false)
                 {
                     _isDelayInProgress = true;
-
+                    _fireGunAnimator.SetTrigger("StartFireAnimation");
                     await Task.Delay(_timeDelay);
 
                     damageable.GetDamage();
